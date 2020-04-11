@@ -17,8 +17,5 @@ public class User {
         return this.PW;
     }
     
-    public String toString(){
-        String aux = "Nombre: "+this.name+" Contraseña: "+this.PW;
-        return aux;
-    }
+   
 }

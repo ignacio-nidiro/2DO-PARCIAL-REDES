@@ -19,8 +19,7 @@ public class Server{
 		
 		
 		
-		aux.printUsers();
-		
+	
 		try 
 		{
 			
@@ -48,15 +47,7 @@ public class Server{
 		}
 	}
 
-	private void printUsers(){
-		
-		System.out.println("USUARIOS REGISTRADOS EN EL SERVER\n------------------------");
-		
-		for (User user : users) {
-			System.out.println(user.toString());
-		}
-		
-		System.out.println("------------------------\n");
-	}
+
+
 }
 

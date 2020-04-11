@@ -59,7 +59,7 @@ public class Client {
 					textoMezclado = M.mezcla(mensajeAleatorio, user.getPW());//MEZCLANDO
 
 			
-					String md5cli = md5.getMD5(textoMezclado);
+					String md5cli = md5.M5D(textoMezclado);
 					
 		//GENERANDO MD5
 					output.println(encriptar(md5cli));//3o				
@@ -82,6 +82,8 @@ public class Client {
 					String c = s.nextLine();
 					if(c.equals("1"))
 					System.out.println("ESCRIBE TUS MENSAJES:(SOLO ENTER PARA SALIR)");
+					else 
+					output.println(encriptar("+-SALIR-+"));
 					while(c.equals("1")){
 							mensaje = s.nextLine();
 							if(mensaje.equals("")){
@@ -137,6 +139,7 @@ public class Client {
 					}
 					break;
 				case "3":
+					
 					System.out.println("SALIENDO DEL CLIENTE.......");
 					System.exit(1);
 					

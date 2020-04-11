@@ -107,7 +107,7 @@ public class MD5{
         return md5;
     }
 
-    public static String toHexString(byte[] b){
+    public static String toString(byte[] b){
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < b.length; i++){
             sb.append(String.format("%02X", b[i] & 0xFF));
@@ -115,10 +115,10 @@ public class MD5{
         return sb.toString();
     }
 
-    public String getMD5(String str){
+    public String M5D(String str){
 		
 		System.out.println("GENERANDO MD5.............");
 						
-        return toHexString(calculaMD5(str.getBytes()));
+        return toString(calculaMD5(str.getBytes()));
     }
 }

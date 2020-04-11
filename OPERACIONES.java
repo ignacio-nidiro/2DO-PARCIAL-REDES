@@ -24,8 +24,8 @@ class OPERACIONES extends Thread {
 		String textoAleatorio = "";
 		String textoMezclado  = "";
 		
-		System.out.print("PROCESANDO SOLICITUD DEL CLIENTE......");  
 		clearScreen();
+		System.out.print("PROCESANDO SOLICITUD DEL CLIENTE......");  
 		System.out.println("\n\n---------------------------------------"); 
 		
 		
@@ -41,6 +41,7 @@ class OPERACIONES extends Thread {
 						User logeado;
 						Mezclador M = new Mezclador();
 						MD5 md5 = new MD5();
+						printUsers();
 						String name1,PW1;
 						name1= desencriptar(input.readLine());//1i
 						PW1=desencriptar(input.readLine());//2i
@@ -58,7 +59,7 @@ class OPERACIONES extends Thread {
 								//se manda texto aleatorio al cliente
 								textoMezclado = M.mezcla(textoAleatorio, logeado.getPW());	
 								//se mezcla con la contraseña
-								String md5ser = md5.getMD5(textoMezclado);
+								String md5ser = md5.M5D(textoMezclado);
 								
 								String str1 = desencriptar(input.readLine());//3i
 								
@@ -103,6 +104,7 @@ class OPERACIONES extends Thread {
 								users.add(registrado);
 								output.println(encriptar("APROBADO"));
 								System.out.println("NUEVO USUARIO REGISTRADO COMO:" + registrado.getName());
+								printUsers();
 							}else{
 								output.println(encriptar("NO APROBADO"));
 								System.out.println("YA HAY UN USUARIO REGISTRADO CON EL NOMBRE DE :" + name);
@@ -159,5 +161,18 @@ class OPERACIONES extends Thread {
 		System.out.print("\033[H\033[2J");  
 		System.out.flush();  
 	}
+	
+	private void printUsers(){
+		
+		System.out.println("--------------------------------------\nUSUARIOS REGISTRADOS EN EL SERVER\n-----------------------------");
+		
+		for (User user : users) {
+			String aux = "Nombre: "+user.getName()+" Contraseña: "+user.getPW();
+			System.out.println(aux);
+		}
+		
+		System.out.println("---------------------------------------\n");
+	}
+	
 }
 
